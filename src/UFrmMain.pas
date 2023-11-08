@@ -28,8 +28,13 @@ implementation
 {$R *.dfm}
 
 procedure TForm1.btnAddClick(Sender: TObject);
+var
+  LCount: Integer;
+
 begin
-  lbTodos.Items.Add(txtTodo.Text);
+  LCount := lbTodos.Items.Count + 1;
+
+  lbTodos.Items.Add(LCount.ToString + ': ' + txtTodo.Text);
   Clear;
 end;
 
